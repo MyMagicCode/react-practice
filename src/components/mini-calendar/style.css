@@ -1,0 +1,40 @@
+.calendar {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.calendar_header {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+.calendar_picker_content {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.calendar_picker_content td {
+  text-align: center;
+}
+
+.day {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.day.selected {
+  background-color: #1677ff;
+  color: #fefefe;
+  border-radius: 5px;
+}

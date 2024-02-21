@@ -1,0 +1,55 @@
+$cell-right-padding: 12px;
+$cell-bottom-padding: 5px;
+.calendar {
+  width: 100%;
+  &-context {
+    width: 100%;
+    border-spacing: 4px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.88);
+
+    tr {
+      width: 100%;
+      th {
+        font-weight: 400;
+        text-align: right;
+        box-sizing: border-box;
+        padding-right: $cell-right-padding;
+        padding-bottom: $cell-bottom-padding;
+      }
+    }
+  }
+  &-cell {
+    height: 115px;
+    padding: 0px;
+    color: #ccc;
+    &-current {
+      color: black;
+    }
+    &-inner {
+      width: auto;
+      border: 0px;
+      margin: 0px 4px;
+      height: 115px;
+      overflow: hidden;
+      padding: 4px 8px 0px;
+      box-sizing: border-box;
+      border-top: 2px solid rgba(5, 5, 5, 0.06);
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+    &-selected {
+      background-color: #e6f4ff;
+      border-color: #1677ff;
+      &:hover {
+        background-color: #e6f4ff;
+      }
+    }
+    &-value {
+      text-align: right;
+    }
+  }
+}

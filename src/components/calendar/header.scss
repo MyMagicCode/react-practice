@@ -1,0 +1,12 @@
+.calendar-head {
+  display: flex;
+  justify-content: space-between;
+  &-left{
+    display: flex;
+    align-items: center;
+    div {
+      margin: 0px 10px;
+      cursor: pointer;
+    }
+  }
+}
