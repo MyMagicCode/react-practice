@@ -1,5 +1,7 @@
+import ColorPicker from "../index";
+
 function TestColorPicker() {
-  return <div>测试 颜色选择器</div>;
+  return <ColorPicker></ColorPicker>;
 }
 
 export default TestColorPicker;
