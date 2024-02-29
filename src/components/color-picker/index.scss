@@ -11,4 +11,19 @@
       bottom: 0;
     }
   }
+  &-handler {
+    position: absolute;
+    z-index: 1;
+
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    &-small {
+      width: 12px;
+      height: 12px;
+    }
+  }
 }
