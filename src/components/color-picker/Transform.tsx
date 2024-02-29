@@ -1,7 +1,12 @@
 import { forwardRef, PropsWithChildren } from "react";
 
+
+export interface TransformOffset {
+  x: number;
+  y: number;
+}
 interface TransformProps extends PropsWithChildren {
-  offset: { x: number; y: number };
+  offset: TransformOffset;
 }
 
 const Transform = forwardRef<HTMLDivElement, TransformProps>((props, ref) => {
@@ -12,8 +17,8 @@ const Transform = forwardRef<HTMLDivElement, TransformProps>((props, ref) => {
       style={{
         position: "absolute",
         zIndex: 1,
-        left: offset.x + "px",
-        top: offset.y + "px",
+        left: offset.x ?? 0,
+        top: offset.y ?? 0,
         transform: `translate(50%,50%)`,
       }}
     >

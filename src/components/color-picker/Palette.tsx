@@ -1,11 +1,15 @@
+import { useRef } from "react";
 import { Color } from "./Color";
 import Handler from "./Handler";
 import Transform from "./Transform";
 
 function Palette({ color }: { color: Color }) {
+
+  const transformRef = useRef<HTMLDivElement>(null)
+
   return (
     <div className="color-picker-palette">
-      <Transform offset={{ x: 50, y: 50 }}>
+      <Transform ref={transformRef} offset={{ x: 50, y: 50 }}>
         <Handler color={color} />
       </Transform>
       <div
