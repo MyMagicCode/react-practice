@@ -22,8 +22,12 @@ function ColorPicker(props:ColorPickerProps){
     return new Color(value)
   })
 
+  const handleChange = (color:Color)=>{
+    setColorValue(color)
+  }
+
   return (<div className={cs('color-picker',className)} style={style}>
-    <Palette color={colorValue} />
+    <Palette color={colorValue} onChange={handleChange}/>
   </div>)
 }
 

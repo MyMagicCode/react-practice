@@ -19,7 +19,6 @@ const Transform = forwardRef<HTMLDivElement, TransformProps>((props, ref) => {
         zIndex: 1,
         left: offset.x ?? 0,
         top: offset.y ?? 0,
-        transform: `translate(50%,50%)`,
       }}
     >
       {children}
