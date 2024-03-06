@@ -1,5 +1,5 @@
 import { create, StateCreator } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface ICounterState {
   count: number;
@@ -20,14 +20,15 @@ const logMiddleware = (fn: StateCreator<ICounterState, [], []>) => {
   };
 };
 
-const useCounterStore = create(
-  persist<ICounterState>(
+const useCounterStore = create<ICounterState>()(
+  persist(
     (set) => ({
       count: 0,
       setCount: (val: number) => set({ count: val }),
     }),
     {
       name: "test",
+      storage: createJSONStorage(() => sessionStorage), // 默认为localStorage
     }
   )
 );
