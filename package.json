@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ctrl/tinycolor": "^4.0.3",
+    "@react-spring/web": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +12,7 @@
     "@types/node": "^16.18.79",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
+    "@use-gesture/react": "^10.3.0",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
