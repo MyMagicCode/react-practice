@@ -4,10 +4,11 @@
 // import { ZustandDemo } from "./components/zustand-examples/demo/ZustandDemo";
 // import { TestSpace } from "./components/space/demo/TestSpace";
 // import TestSpring from "./components/spring-examples/demo/TestSpring";
-import TestTransitionGroup from "./components/transition-group-examples/demo/TestTransitionGroup";
+// import TestTransitionGroup from "./components/transition-group-examples/demo/TestTransitionGroup";
+import TestMessage from "./components/message/demo/TestMessage";
 
 function App() {
-  return <TestTransitionGroup></TestTransitionGroup>;
+  return <TestMessage></TestMessage>;
 }
 
 export default App;
