@@ -1,8 +1,9 @@
-import React, { CSSProperties, FC, useEffect, useMemo } from "react";
+import React, { CSSProperties, forwardRef, useMemo } from "react";
 import useMessageStore from "./useMessageStore";
 import "./message.scss";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { createPortal } from "react-dom";
+import { useTimer } from "./useTimer";
 
 export type Position = "top" | "bottom";
 
@@ -15,23 +16,25 @@ export interface MessageProps {
   position?: Position;
 }
 
-export const MessageProvider: FC<{}> = (props) => {
-  const { messageList, add } = useMessageStore("top");
+export interface MessageRef {
+  add: (props: MessageProps) => void;
+  update: (id: number, message: MessageProps) => void;
+  remove: (id: number) => void;
+  clearAll: () => void;
+}
 
-  useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      add({
-        content: "123",
-      });
-      i = i + 1;
-      if (i > 5) clearInterval(timer);
-      console.log("i", i);
-    }, 2000);
+export const MessageProvider = forwardRef<MessageRef, {}>((props, ref) => {
+  const { messageList, add, remove, update, clearAll } = useMessageStore("top");
 
-    return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // 如果使用context包裹的话useImperativeHandle执行时机不对，不能使用
+  if (ref && "current" in ref) {
+    ref.current = {
+      add,
+      remove,
+      update,
+      clearAll,
+    };
+  }
 
   const directions = Object.keys(messageList) as Position[];
 
@@ -45,9 +48,7 @@ export const MessageProvider: FC<{}> = (props) => {
             {messageList[direction].map((item) => {
               return (
                 <CSSTransition timeout={500} key={item.id} classNames="message">
-                  <div key={`message-card-${item.id}`} className="message-card">
-                    {item.content}
-                  </div>
+                  <MessageItem key={item.id} onClose={remove} {...item} />
                 </CSSTransition>
               );
             })}
@@ -66,4 +67,26 @@ export const MessageProvider: FC<{}> = (props) => {
   }, []);
 
   return createPortal(messageWrapper, el);
+});
+
+interface MessageItemProps extends MessageProps {
+  onClose?: (id: number) => void;
+}
+
+const MessageItem = (item: MessageItemProps) => {
+  const { id, content, duration, onClose } = item;
+  const { onMouseEnter, onMouseLeave } = useTimer({
+    id: id!,
+    duration,
+    remove: onClose!,
+  });
+  return (
+    <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      key={`message-card-${id}`}
+      className="message-card">
+      {content}
+    </div>
+  );
 };
