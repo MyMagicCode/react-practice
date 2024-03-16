@@ -5,10 +5,11 @@
 // import { TestSpace } from "./components/space/demo/TestSpace";
 // import TestSpring from "./components/spring-examples/demo/TestSpring";
 // import TestTransitionGroup from "./components/transition-group-examples/demo/TestTransitionGroup";
-import TestMessage from "./components/message/demo/TestMessage";
+// import TestMessage from "./components/message/demo/TestMessage";
+import DndDemo from "./components/react-dnd-examples/demo/DndDemo";
 
 function App() {
-  return <TestMessage></TestMessage>;
+  return <DndDemo></DndDemo>;
 }
 
 export default App;
