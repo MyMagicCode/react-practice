@@ -1,0 +1,13 @@
+.card {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #5a5a5a;
+  margin: 20px auto;
+  cursor: move;
+}
+
+.dragging {
+  border: 1px dashed #5a5a5a;
+}
