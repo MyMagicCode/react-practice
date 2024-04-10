@@ -14,15 +14,17 @@ const GRADIENTS = [
 
 export default function DesktopExample() {
   return (
-    <Dock>
-      {GRADIENTS.map((src) => {
-        return (
-          <DockCard key={src}>
-            <Card src={src}></Card>
-          </DockCard>
-        );
-      })}
-    </Dock>
+    <div className="body">
+      <Dock>
+        {GRADIENTS.map((src) => {
+          return (
+            <DockCard key={src}>
+              <Card src={src}></Card>
+            </DockCard>
+          );
+        })}
+      </Dock>
+    </div>
   );
 }
 

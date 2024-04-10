@@ -1,0 +1,90 @@
+import { useNavigate } from "react-router-dom";
+import "./home.scss";
+import { useTransition } from "react";
+
+export function Home() {
+  const navigate = useNavigate();
+  const [, startTransition] = useTransition();
+  const handleClick = (path: string) => {
+    startTransition(() => {
+      // 跳转到指定的页面
+      navigate(path);
+    });
+  };
+
+  return (
+    <div className="home">
+      <div className="home-container">
+        <p className="title">React进阶练习</p>
+        <div className="list">
+          {list.map((item) => (
+            <div
+              key={item.path}
+              onClick={() => handleClick(item.path)}
+              className="card">
+              <div className="view custom-scrollbar">
+                <h5 className="label">{item.label}</h5>
+                <p className="describe">{item.describe}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const list = [
+  {
+    path: "/zustand",
+    label: "zustand的使用",
+    describe:
+      "演示zustand的基本使用，还有如何监听state的变化，并且实现了一个zustand。",
+  },
+  {
+    path: "/space",
+    label: "space组件",
+    describe:
+      "实现一个space组件，可以设置间距和排列方式，支持provider数据配置等功能。",
+  },
+  {
+    path: "/calendar",
+    label: "calendar组件",
+    describe: "实现一个日历组件，可以选择日期，切换月份等功能。",
+  },
+  {
+    path: "/react-spring",
+    label: "react-spring的使用",
+    describe: "演示react-spring库的基本使用，实现各种动画效果。",
+  },
+  {
+    path: "/message",
+    label: "message组件",
+    describe: "实现一个消息提示组件，可以在不同方向弹出消息。",
+  },
+  {
+    path: "/transition-group",
+    label: "transition-group的使用",
+    describe: "使用react-transition-group库实现过渡效果。",
+  },
+  {
+    path: "/icon",
+    label: "icon组件",
+    describe: "实现一个icon组件，能够加载自定义图标和远程图标。",
+  },
+  {
+    path: "/canvas",
+    label: "canvas的使用",
+    describe: "使用canvas绘制图形，演示基本api的使用和实现动画效果。",
+  },
+  {
+    path: "/react-dnd",
+    label: "react-dnd的使用",
+    describe: "基本api演练,使用react-dnd库实现拖拽功能。",
+  },
+  {
+    path: "/color-picker",
+    label: "color-picker组件",
+    describe: "实现一个颜色选择器组件，可以选择颜色。",
+  },
+];

@@ -2,7 +2,7 @@ import Space from "..";
 import { ConfigProvider } from "../ConfigContext";
 import "./test-style.scss";
 
-export function TestSpace() {
+export default function TestSpace() {
   return (
     <>
       <h2>基本使用方式</h2>
@@ -17,8 +17,7 @@ export function TestSpace() {
         <div className="box"></div>
       </Space>
       <Space
-        split={<div className="box" style={{ backgroundColor: "red" }}></div>}
-      >
+        split={<div className="box" style={{ backgroundColor: "red" }}></div>}>
         <div className="box"></div>
         <div className="box"></div>
         <div className="box"></div>

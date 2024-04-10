@@ -4,6 +4,6 @@ import { BasicExample } from "../BasicExample";
 import { MiddlewareExample } from "../MiddlewareExample";
 import { CustomExample } from "../CustomExample";
 
-export function ZustandDemo() {
-  return <MiddlewareExample></MiddlewareExample>;
+export default function ZustandDemo() {
+  return <CustomExample></CustomExample>;
 }
