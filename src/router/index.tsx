@@ -27,17 +27,9 @@ const DndDemo = lazy(
 const TestColorPicker = lazy(
   () => import("../components/color-picker/demo/Test")
 ); // 颜色选择器组件
-
-// import CalendarDemo from "./components/calendar/demo/Test";// 日历组件
-// import TestColorPicker from "./components/color-picker/demo/Test"; // 颜色选择器组件
-// import TestIcon from "./components/Icon/demo/TestIcon";// icon组件
-// import { ZustandDemo } from "./components/zustand-examples/demo/ZustandDemo";
-// import { TestSpace } from "./components/space/demo/TestSpace";// space组件
-// import TestSpring from "./components/spring-examples/demo/TestSpring"; // react-spring的使用
-// import TestTransitionGroup from "./components/transition-group-examples/demo/TestTransitionGroup";// react-transition-group的使用
-// import TestMessage from "./components/message/demo/TestMessage"; // message组件
-// import DndDemo from "./components/react-dnd-examples/demo/DndDemo"; // react-dnd的使用
-// import CanvasDemo from "./components/canvas-examples/demo/CanvasDemo"; // canvas的使用
+const TestKeepAlive = lazy(
+  () => import("../components/keep-alive/demo/TestKeepAlive")
+); // keep-alive组件
 
 export const router = createBrowserRouter([
   {
@@ -83,5 +75,9 @@ export const router = createBrowserRouter([
   {
     path: "color-picker",
     element: <TestColorPicker />,
+  },
+  {
+    path: "keep-alive/*",
+    element: <TestKeepAlive />,
   },
 ]);

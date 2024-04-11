@@ -87,4 +87,9 @@ const list = [
     label: "color-picker组件",
     describe: "实现一个颜色选择器组件，可以选择颜色。",
   },
+  {
+    path: "keep-alive",
+    label: "keep-alive组件",
+    describe: "实现一个keep-alive组件，可以缓存组件状态。",
+  },
 ];
