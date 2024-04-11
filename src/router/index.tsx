@@ -30,6 +30,9 @@ const TestColorPicker = lazy(
 const TestKeepAlive = lazy(
   () => import("../components/keep-alive/demo/TestKeepAlive")
 ); // keep-alive组件
+const TestPopover = lazy(
+  () => import("../components/popover/demo/TestPopover")
+);
 
 export const router = createBrowserRouter([
   {
@@ -79,5 +82,9 @@ export const router = createBrowserRouter([
   {
     path: "keep-alive/*",
     element: <TestKeepAlive />,
+  },
+  {
+    path: "popover",
+    element: <TestPopover />,
   },
 ]);

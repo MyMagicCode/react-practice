@@ -88,8 +88,13 @@ const list = [
     describe: "实现一个颜色选择器组件，可以选择颜色。",
   },
   {
-    path: "keep-alive",
+    path: "/keep-alive",
     label: "keep-alive组件",
-    describe: "实现一个keep-alive组件，可以缓存组件状态。",
+    describe: "基于react-router实现一个keep-alive组件，可以缓存组件状态。",
+  },
+  {
+    path: "/popover",
+    label: "popover组件",
+    describe: "基于floating-ui实现一个popover组件，弹出气泡式的卡片浮层。",
   },
 ];

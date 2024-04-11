@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ctrl/tinycolor": "^4.0.3",
+    "@floating-ui/react": "^0.26.12",
     "@react-spring/web": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
