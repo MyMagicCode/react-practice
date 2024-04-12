@@ -97,4 +97,10 @@ const list = [
     label: "popover组件",
     describe: "基于floating-ui实现一个popover组件，弹出气泡式的卡片浮层。",
   },
+  {
+    path: "/tour",
+    label: "tour组件",
+    describe:
+      "基于popover和浏览器的scrollIntoView方法实现一个Tour组件，用于分步引导用户了解产品功能的气泡组件。",
+  },
 ];

@@ -33,6 +33,7 @@ const TestKeepAlive = lazy(
 const TestPopover = lazy(
   () => import("../components/popover/demo/TestPopover")
 );
+const TestTour = lazy(() => import("../components/tour/demo/TestTour")); // tour漫游导航组件
 
 export const router = createBrowserRouter([
   {
@@ -86,5 +87,9 @@ export const router = createBrowserRouter([
   {
     path: "popover",
     element: <TestPopover />,
+  },
+  {
+    path: "tour",
+    element: <TestTour />,
   },
 ]);

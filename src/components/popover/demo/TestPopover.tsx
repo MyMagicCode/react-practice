@@ -11,7 +11,7 @@ export default function TestPopover() {
         flexWrap: "wrap",
       }}>
       <h1 style={{ textAlign: "center", width: "100%" }}>popover 组件示例</h1>
-      <Popover content={"bottom"}>
+      <Popover content={"bottom"} open={true}>
         <button>bottom</button>
       </Popover>
       <Popover content={"top"} placement="top">
