@@ -1,12 +1,15 @@
 .home {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: absolute;
   background-color: rgb(248 250 252/1);
+  z-index: -2;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23f1f5f9'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
   &-container {
-    width: 80%;
+    max-width: 1220px;
     margin: 80px auto 0px auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
     .title {
       font-size: 24px;
       font-weight: bold;
@@ -14,49 +17,69 @@
     }
     .list {
       width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-  
-    .card {
-      cursor: pointer;
-      color: #111827;
-      width: 240px;
-      box-sizing: border-box;
-      padding: 10px 5px 10px 12px;
-      height: 140px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      overflow: hidden;
-      .view {
-        width: 100%;
-        height: 100%;
-        overflow-y: scroll;
+      display: grid;
+      // grid-template-columns:  repeat(3, 33.33%);// 设置3个33.33%
+      // grid-template-columns: repeat(auto-fill, 100px);// 宽度100px,一行数量到放不下
+      grid-template-columns: repeat(1, 1fr); // 列的比例个数量
+      // grid-row-gap: 20px;
+      // grid-column-gap: 20px;
+      grid-gap: 2rem;
+      @media screen and (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (min-width: 1280px) {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      &:hover{
-        background-color: rgb(243 244 246/1);
-      }
-      .label {
-        font-weight: 700;
+      &_card {
+        cursor: pointer;
+        color: #111827;
+        box-sizing: border-box;
+        padding: 15px 15px 15px 15px;
+        min-height: 200px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 13px;
+        position: relative;
+
+        &:hover {
+          background-color: rgba($color: #fff, $alpha: .8);
+        }
+
+        &::before {
+          content: "";
+          border-radius: 13px;
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          z-index: -1;
+          inset: -2px;
+          background-color: rgb(229,229,229);
+          background-image: radial-gradient(250px circle at var(--x) var(--y), var(--bg-color) 0, transparent 100%);
+          will-change: background;
+        }
+
+        .view {
+          width: 100%;
+          height: 100%;
+          overflow-y: scroll;
+        }
+
+        .label {
+          font-weight: 700;
           font-size: 1.5rem;
           line-height: 2rem;
-          margin: 0 0 .5rem 0;
-      }
-      .describe {
-        font-weight: 400;
-        color: rgb(55 65 81/1);
-        margin: 0;
-        font-size: 14px;
-        overflow: hidden;
-        // display: -webkit-box;
-        // -webkit-box-orient: vertical;
-        // -webkit-line-clamp: 4;
-        // white-space: nowrap;
+          margin: 0 0 0.5rem 0;
+        }
+        .describe {
+          font-weight: 400;
+          color: rgb(64 64 64/1);
+          margin: 0;
+          font-size: 16px;
+          line-height: 28px;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -73,13 +96,25 @@
 /* 滚动条滑块 */
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #888;
-  border-radius:5px;
-  visibility: hidden; 
+  border-radius: 5px;
+  visibility: hidden;
 }
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  visibility:visible;
+  visibility: visible;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.1);
-} 
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  height: 5px;
+}
+
+/* 滚动条滑块 */
+body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+}
