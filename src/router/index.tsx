@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { lazy } from "react";
 
+const TestForm = lazy(() => import("../components/form/demo/TestForm")); // 测试表单组件
 const ZustandDemo = lazy(
   () => import("../components/zustand-examples/demo/ZustandDemo")
 ); // zustand状态管理的使用
@@ -91,5 +92,9 @@ export const router = createBrowserRouter([
   {
     path: "tour",
     element: <TestTour />,
+  },
+  {
+    path: "form",
+    element: <TestForm />,
   },
 ]);

@@ -125,4 +125,10 @@ const list = [
     describe:
       "基于popover和浏览器的scrollIntoView方法实现一个Tour组件，用于分步引导用户了解产品功能的气泡组件。",
   },
+  {
+    path: "/form",
+    label: "form组件",
+    describe:
+      "基于react内部hook和async-validator ，实现一个类似于ant-design的form组件，支持字段校验功能。",
+  },
 ];
