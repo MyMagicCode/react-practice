@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { lazy } from "react";
 
+const TestUpload = lazy(() => import("../components/upload/demo/TestUpload")); // 测试上传组件
 const TestForm = lazy(() => import("../components/form/demo/TestForm")); // 测试表单组件
 const ZustandDemo = lazy(
   () => import("../components/zustand-examples/demo/ZustandDemo")
@@ -96,5 +97,9 @@ export const router = createBrowserRouter([
   {
     path: "form",
     element: <TestForm />,
+  },
+  {
+    path: "upload",
+    element: <TestUpload />,
   },
 ]);

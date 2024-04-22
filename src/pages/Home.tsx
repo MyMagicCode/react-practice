@@ -131,4 +131,10 @@ const list = [
     describe:
       "基于react内部hook和async-validator ，实现一个类似于ant-design的form组件，支持字段校验功能。",
   },
+  {
+    path: "/upload",
+    label: "upload组件",
+    describe:
+      "使用axios库作为上传库，实现一个upload上传组件，支持拖动上传和上传进度显示。",
+  },
 ];
