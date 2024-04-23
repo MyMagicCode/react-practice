@@ -23,6 +23,9 @@ const TestUpload = () => {
           上传文件
         </div>
       </Upload>
+      <Upload {...uploadProps} drag multiple>
+        <h2>拖拽上传文件</h2>
+      </Upload>
     </>
   );
 };

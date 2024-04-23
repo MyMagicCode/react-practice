@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ChangeEvent, PropsWithChildren, useRef, useState } from "react";
 import UploadFileList, { UploadFile } from "./UploadFileList";
+import Dragger from "./Dragger";
 
 export interface UploadProps extends PropsWithChildren {
   action: string;
@@ -14,6 +15,7 @@ export interface UploadProps extends PropsWithChildren {
   // 允许的文件后缀
   accept?: string;
   multiple?: boolean;
+  drag?: boolean;
   beforeUpload?: (file: File) => boolean | Promise<File>;
   onProgress?: (percentage: number, file: File) => void;
   onSuccess?: (data: any, file: File) => void;
@@ -38,6 +40,7 @@ const Upload = (props: UploadProps) => {
     onProgress,
     onSuccess,
     onRemove,
+    drag,
   } = props;
 
   const fileInput = useRef<HTMLInputElement>(null);
@@ -162,7 +165,7 @@ const Upload = (props: UploadProps) => {
   return (
     <div className="upload-container">
       <div className="upload-input inline-block" onClick={handleClick}>
-        {children}
+        {drag ? <Dragger onFile={uploadFiles}>{children}</Dragger> : children}
         <input
           ref={fileInput}
           className="hidden"
