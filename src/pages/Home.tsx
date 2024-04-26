@@ -137,4 +137,10 @@ const list = [
     describe:
       "使用axios库作为上传库，实现一个upload上传组件，支持拖动上传和上传进度显示。",
   },
+  {
+    path: "/todo-list",
+    label: "TodoList",
+    describe:
+      "基于react-dnd、tailwindCss、Zustand、react-spring实现一个待办列表，可以拖动添加和删除，双击编辑功能。",
+  },
 ];
