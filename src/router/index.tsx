@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { lazy } from "react";
 
+const TestDemo = lazy(() => import("../pages/TestDemo")); // 测试页面
 const TodoListIndex = lazy(() => import("../components/todo-list")); // todo list
 const TestUpload = lazy(() => import("../components/upload/demo/TestUpload")); // 测试上传组件
 const TestForm = lazy(() => import("../components/form/demo/TestForm")); // 测试表单组件
@@ -106,5 +107,9 @@ export const router = createBrowserRouter([
   {
     path: "todo-list",
     element: <TodoListIndex />,
+  },
+  {
+    path: "test-demo",
+    element: <TestDemo />,
   },
 ]);

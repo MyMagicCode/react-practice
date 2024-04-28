@@ -143,4 +143,9 @@ const list = [
     describe:
       "基于react-dnd、tailwindCss、Zustand、react-spring实现一个待办列表，可以拖动添加和删除，双击编辑功能。",
   },
+  {
+    path: "/test-demo",
+    label: "测试封装的hook和组件",
+    describe: "用于测试封装的hook和组件的页面",
+  },
 ];
