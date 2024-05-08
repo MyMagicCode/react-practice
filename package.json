@@ -5,6 +5,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "^4.0.3",
     "@floating-ui/react": "^0.26.12",
+    "@monaco-editor/react": "^4.6.0",
     "@react-spring/web": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -13,7 +14,9 @@
     "@types/node": "^16.18.79",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
+    "@typescript/ata": "^0.9.4",
     "@use-gesture/react": "^10.3.0",
+    "allotment": "^1.20.0",
     "async-validator": "^4.2.5",
     "axios": "^1.6.8",
     "classnames": "^2.5.1",

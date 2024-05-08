@@ -113,6 +113,13 @@ export const pages = [
     describe: "用于测试封装的hook和组件的页面",
     component: () => import("../pages/TestDemo"),
   },
+  {
+    path: "/react-playground",
+    label: "React Playground",
+    describe:
+      "基于@babel/standalone、esm.sh、@monaco-editor/react、allotment实现一个React Playground，可以在线编辑React代码。",
+    component: () => import("../components/react-playground"),
+  },
 ];
 
 // 生成路由
