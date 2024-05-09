@@ -1,7 +1,20 @@
+import { JSXElementConstructor, ReactElement } from "react";
 import { RouteObject } from "react-router-dom";
-
+interface Page {
+  // 用于路由的地址，如果没有则使用path
+  routePath?: string;
+  path: string;
+  label: string;
+  describe: string;
+  component: () => Promise<{
+    default: () => ReactElement<
+      any,
+      string | JSXElementConstructor<any>
+    > | null;
+  }>;
+}
 /** 菜单配置 */
-export const pages = [
+export const pages: Page[] = [
   {
     path: "/zustand",
     label: "zustand的使用",
@@ -69,6 +82,7 @@ export const pages = [
   },
   {
     path: "/keep-alive",
+    routePath: "/keep-alive/*",
     label: "keep-alive组件",
     describe: "基于react-router实现一个keep-alive组件，可以缓存组件状态。",
     component: () => import("../components/keep-alive/demo/TestKeepAlive"),
@@ -125,7 +139,7 @@ export const pages = [
 // 生成路由
 export const routers: RouteObject[] = pages.map((page) => {
   return {
-    path: page.path,
+    path: page.routePath || page.path,
     // 懒加载组件
     async lazy() {
       const { default: Component } = await page.component();

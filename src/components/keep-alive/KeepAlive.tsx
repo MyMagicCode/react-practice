@@ -38,6 +38,7 @@ export function useKeepOutlet() {
 
   /**
    * 依赖react组件树的相同位置的相同组件会使得 state 被保留下来，从而达到keep alive功能
+   * 也可以使用key的方式可以保证组件在不同位置的时候，state不会被销毁，从而达到keep alive功能
    * https://zh-hans.react.dev/learn/preserving-and-resetting-state#same-component-at-the-same-position-preserves-state
    */
   if (isKeep) {

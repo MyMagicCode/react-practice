@@ -51,8 +51,7 @@ function Foo() {
           margin: "0 auto",
         }}>
         <h1>test keep alive</h1>
-        <KeepOutlet />
-        <p>
+        <p style={{ display: "flex", gap: "10px" }}>
           <Link to={"aaa"}>AAA</Link>
           <br />
           <Link to={"bbb"}>BBB</Link>
@@ -61,6 +60,7 @@ function Foo() {
           <br />
           <Link to={"ddd"}>DDD</Link>
         </p>
+        <KeepOutlet />
       </div>
     </Suspense>
   );
@@ -70,10 +70,10 @@ function Aaa() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div style={{ backgroundColor: "lightblue", padding: 10 }}>
       <h2>AAA: {count}</h2>
       <button onClick={() => setCount((c) => c + 1)}>+1</button>
-    </>
+    </div>
   );
 }
 
@@ -81,10 +81,10 @@ function Bbb() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div style={{ backgroundColor: "lightpink", padding: 10 }}>
       <h2>BBB: {count}</h2>
       <button onClick={() => setCount((c) => c + 1)}>+1</button>
-    </>
+    </div>
   );
 }
 
@@ -92,10 +92,10 @@ function Ccc() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div style={{ backgroundColor: "lightcoral", padding: 10 }}>
       <h2>Ccc: {count}</h2>
       <button onClick={() => setCount((c) => c + 1)}>+1</button>
-    </>
+    </div>
   );
 }
 
@@ -103,9 +103,9 @@ function Ddd() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div style={{ backgroundColor: "lightgreen", padding: 10 }}>
       <h2>Ddd: {count}</h2>
       <button onClick={() => setCount((c) => c + 1)}>+1</button>
-    </>
+    </div>
   );
 }
